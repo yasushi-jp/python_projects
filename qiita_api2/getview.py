@@ -11,7 +11,6 @@ import json
 url = 'https://qiita.com/api/v2/authenticated_user/items'
 params = { "page" : "1", "per_page" : "100"}
 headers = {"content-type" : "application/json", "Authorization" : "Bearer xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
-
 res = requests.get(url, headers=headers, params=params)
 list = res.json()
 
@@ -19,7 +18,7 @@ total_views_cnt = 0
 total_likes_cnt = 0
 total_stocks_cnt = 0
 
-print("作成日, タイトル, ,URL, ビューカウント, いいねカウント, ストックカウント")
+print("作成日,タイトル,URL,ビューカウント,いいねカウント,ストックカウント")
 for item in list:
     item_id = item['id']
     title = item['title']
